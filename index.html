@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qdrops</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: "Poppins", sans-serif;
+    background: #edfcff;
+    overflow-x: hidden;
+
+}
+     /* Custom styles */
+     .custom-section {
+            background-color: #cbedfc; /* Light blue background color */
+            padding: 50px 0;
+        }
+
+        .logo img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .section-heading {
+            color: #000B41;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .subheading {
+            color: #000B41;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px; /* Button width */
+            height: 60px; /* Button height */
+            background-color: #25D366; /* WhatsApp green */
+            color: white; /* Icon color */
+            font-size: 24px; /* Icon size */
+            border: 3px solid #ffffff; /* Border around the button */
+            border-radius: 50%; /* Makes the button circular */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for style */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px; /* Spacing between buttons */
+            align-items: center;
+        }
+
+        .cta-button {
+            background-color: #FF4E8A; /* Pink color for the other button */
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #E43E78; /* Darker shade on hover */
+        }
+
+        .image-section {
+            position: relative;
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 300px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(90deg, rgba(255, 84, 128, 0.6), rgba(0, 193, 255, 0.6));
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 1.5rem;
+            }
+
+            .subheading {
+                font-size: 1rem;
+            }
+
+            .button-row {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .button-row .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        .about-section {
+            padding: 60px 0;
+        }
+
+        .about-heading {
+            color: #003366;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .about-highlight {
+            color: #FF4E8A; /* Pink text */
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-description {
+            color: #003366;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-box {
+            background-color: #d4f1fc;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-box-item {
+            text-align: center;
+        }
+
+        .about-box-item h3 {
+            color: #003366;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-box-item p {
+            color: #666666;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                text-align: center;
+            }
+
+            .about-image {
+                margin-top: 30px;
+            }
+
+            .about-box {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        /* Main Section Styles */
+        .expertise-section {
+            padding: 50px 0;
+        }
+
+        .expertise-heading {
+            color: #003366;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .expertise-subheading {
+            color: #FF4E8A; /* Pink color */
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Card Styles */
+        .expert-card {
+            background-color: #fff;
+            border: none;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .expert-card:hover {
+            transform: translateY(-10px); /* Slight lift effect on hover */
+        }
+
+        .expert-card img {
+            width: 100%;
+            height: auto;
+            border-top-right-radius: 15px; /* Curved top-right border for image */
+        }
+
+        .expert-card-body {
+            padding: 20px;
+        }
+
+        .expert-card-title {
+            color: #000B41;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .expert-card-content {
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .expert-card {
+                margin-bottom: 20px;
+            }
+
+            .expert-card-title {
+                font-size: 1rem;
+            }
+
+            .expert-card-content {
+                font-size: 0.8rem;
+            }
+        }
+        .water-section {
+            padding: 50px 20px;
+        }
+
+        .water-heading {
+            color: #000B41;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .water-subheading {
+            background-color: #000B41;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .grid-heading {
+            color: #000B41;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .grid-text {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .water-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .download-btn {
+            background-color: #939ED6;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #7F8BC3;
+            color: #fff;
+        }
+        /* Section Styling */
+        .filtration-section {
+            padding: 50px 20px;
+        }
+
+        .subheading {
+            background-color: #000B41;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .item-title {
+            color: #000B41;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .item-text {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .item-image {
+            max-width: 100%;
+            border-radius: 8px; /* Optional image styling */
+        }
+
+        .bottom-text {
+            font-size: 1.2rem;
+            color: #FF4E8A;
+            font-weight: bold;
+        }
+
+        .download-btn {
+            background-color: #939ED6;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #7F8BC3;
+            color: #fff;
+        }
+        /* Section Styling */
+        .testimonial-section {
+            background-color: #092d64; /* Dark Blue Background */
+            color: white; /* White text for the section */
+            padding: 50px 20px;
+        }
+
+        .testimonial-heading {
+            font-size: 40px;
+            font-weight:450 ;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: none; /* Transparent background */
+            border: none; /* Remove card borders */
+            text-align: center;
+            color: white; /* Text inside the cards */
+        }
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px; /* Center image */
+        }
+
+        .testimonial-title {
+            color: #FF4E8A; /* Pinkish Title */
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #ddd; /* Light gray text */
+        }
+
+        .stars {
+            color: #FFD700; /* Gold star color */
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                margin-bottom: 30px; /* Space between cards on smaller devices */
+            }
+        }
+        .gallery-section {
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        .gallery-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000B41; /* Dark text color */
+        }
+
+        .gallery-subheading {
+            font-style: italic;
+            color: #000B41;
+        }
+
+        /* Arrow Styling */
+        .gallery-arrow {
+            position: absolute;
+            top: 30%; /* Adjust for vertical alignment */
+            right: 20px; /* Ensure the arrow stays inside the container */
+            font-size: 3rem;
+            color: #FF4E8A; /* Pink arrow color */
+            transform: rotate(0deg); /* Straight down arrow */
+        }
+
+        /* Gallery Grid Images */
+        .gallery-grid img {
+            border-radius: 8px; /* Rounded corners for images */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .gallery-grid .grid-item {
+            overflow: hidden; /* Prevents image overflow */
+        }
+
+        @media (max-width: 768px) {
+            .gallery-heading {
+                font-size: 1.8rem;
+            }
+
+            .gallery-arrow {
+                font-size: 2rem;
+                top: 25%;
+            }
+        }
+        .form-text-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000B41; /* Dark heading color */
+    }
+
+    .form-text-section p {
+      color: #333; /* Light black text */
+      line-height: 1.8;
+    }
+
+    /* Form Styling */
+    .form-container {
+      background-color: #fff; /* Light grey background */
+      padding: 30px;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container input,
+    .form-container textarea {
+      border-radius: 5px;
+      border: 1px solid #CCC; /* Border for input fields */
+      padding: 10px;
+    }
+
+    .form-container button {
+      background-color: #28A745; /* Green button */
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .form-text-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .form-container {
+        margin-top: 20px;
+      }
+    }
+    .showcase-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000B41; /* Dark heading color */
+      margin-bottom: 30px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px; /* Optional rounded corners for images */
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-image:hover {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+    .process-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000B41; /* Dark blue heading */
+      margin-bottom: 40px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .process-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      border-radius: 8px; /* Rounded corners for the icons */
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .bg-step-1 {
+      background-color: #00BFFF; /* Unique blue background */
+    }
+
+    .bg-step-2 {
+      background-color: #00C49A; /* Unique green background */
+    }
+
+    .bg-step-3 {
+      background-color: #1E90FF; /* Unique dark blue background */
+    }
+
+    .bg-step-4 {
+      background-color: #0072CE; /* Unique navy blue background */
+    }
+
+    .process-list {
+      text-align: left;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    .process-container {
+      margin-bottom: 40px;
+    }
+    .contact-container {
+      padding: 50px 0;
+    }
+
+    .contact-text {
+      color: #000B41; /* Dark blue */
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    .contact-subtext {
+      font-size: 1rem;
+      color: #000B41;
+    }
+
+    .arrow-line {
+      position: relative;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+
+    .arrow-line .fa-arrow-right {
+      font-size: 1.9rem;
+      color: #000B41;
+      margin-left: 10px;
+      position: absolute;
+      top: -7px;
+      right: -20px;
+      
+    }
+
+    .divider {
+      border-left: 2px solid #000B41;
+      height: 100%;
+    }
+
+    .contact-details h5 {
+      color: #000B41;
+      font-weight: bold;
+    }
+
+    .contact-details p {
+      margin-bottom: 5px;
+      color: #000B41;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #000B41;
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #00BFFF; /* Bright blue */
+    }
+</style>
+<body>
+
+
+
+
+
+
+    <section class="custom-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Column -->
+                <div class="col-md-6 pt-5 text-center text-md-start">
+                    <!-- Logo -->
+                    <div class="logo mt-5">
+                        <img src="logo.png" alt="Qdrop Logo">
+                    </div>
+                    <!-- Heading and Subheading -->
+                    <h1 class="section-heading mt-5">Welcome to Qdrop – Kochi’s Trusted Water Purifier Experts</h1>
+                    <p class="subheading mt-3">Pure water, perfected for your home and business.</p>
+                    <!-- Button Row -->
+                    <div class="container text-center mt-5">
+                        <div class="button-container">
+                            <!-- Regular Button -->
+                            <a href="#" class="cta-button">Request a Quote</a>
+                    
+                            <!-- WhatsApp Button -->
+                            <a href="https://wa.me/" style="text-decoration: none;" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-md-6 pt-5 image-section position-relative">
+                    <!-- <div class="gradient-bg mt-5"></div> -->
+                    <img src="https://via.placeholder.com/200x500" alt="Water Purifier" class="img-fluid mt-5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Text Section -->
+                <div class="col-lg-6">
+                    <h1 class="about-heading">Over <span style="font-weight: bold; color: #003366;">30%</span> of Water Sources in Kerala Fail Safety Standards</h1>
+                    <p class="about-highlight">With rising contamination levels, Kerala faces a critical need for effective water treatment solutions.</p>
+                    <p class="about-description">
+                        At Qdrop, we specialize in solving water challenges for homes and businesses using cutting-edge technology and skilled professionals. With quick service guaranteed, our team ensures clean, safe water tailored to your needs—right when you need it.
+                    </p>
+                    <div class="about-box mt-4">
+                        <div class="about-box-item">
+                            <h3>10K+</h3>
+                            <p>Safe Water Solutions</p>
+                        </div>
+                        <div class="about-box-item">
+                            <h3>24/7</h3>
+                            <p>Customer Support</p>
+                        </div>
+                        <div class="about-box-item">
+                            <h3>100%</h3>
+                            <p>After-Service Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Right Image Section -->
+                <div class="col-lg-6 text-center about-image">
+                    <img src="https://via.placeholder.com/500" alt="Water Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="expertise-section">
+        <div class="container ">
+            <!-- Main Heading -->
+            <h2 class="expertise-heading">Our Expertise</h2>
+            <p class="expertise-subheading">From iron removal to softening, Qdrop makes purity personal.<br>Water you can trust, crafted for your needs.</p>
+    
+            <!-- Card Row -->
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card expert-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Commercial Water Treatment" class="card-img-top">
+                        <div class="card-body expert-card-body">
+                            <h5 class="expert-card-title">COMMERCIAL WATER TREATMENT</h5>
+                            <p class="expert-card-content">
+                                <ul>
+                                    <li>High-capacity filtration systems for offices, restaurants, and factories.</li>
+                                    <li>Custom designs for industries like healthcare and food processing.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card expert-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Domestic Water Purification" class="card-img-top">
+                        <div class="card-body expert-card-body">
+                            <h5 class="expert-card-title">DOMESTIC WATER PURIFICATION</h5>
+                            <p class="expert-card-content">
+                                <ul>
+                                    <li>Compact and efficient purifiers for homes.</li>
+                                    <li>Reverse Osmosis (RO), UV, and UF systems.</li>
+                                    <li>Maintenance and replacement services.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card expert-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Water Testing Services" class="card-img-top">
+                        <div class="card-body expert-card-body">
+                            <h5 class="expert-card-title">WATER TESTING SERVICES</h5>
+                            <p class="expert-card-content">
+                                <ul>
+                                    <li>On-site testing to assess your water quality.</li>
+                                    <li>Expert recommendations for the best treatment solution.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 4 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card expert-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Maintenance & Support" class="card-img-top">
+                        <div class="card-body expert-card-body">
+                            <h5 class="expert-card-title">MAINTENANCE & SUPPORT</h5>
+                            <p class="expert-card-content">
+                                <ul>
+                                    <li>On-site testing to assess your water quality.</li>
+                                    <li>Expert recommendations for the best treatment solution.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="water-section">
+        <div class="container">
+            <!-- Heading -->
+            <div>
+                <h2 class="water-heading">Our Residential <br> <span style="color: #FF4E8A;">Water Treatment</span> <br> Solutions</h2>
+            </div>
+    
+            <!-- Subheading -->
+            <div class=" mt-3">
+                <span class="water-subheading">Purifiers</span>
+            </div>
+    
+            <!-- Row for Grid -->
+            <div class="row align-items-center mt-5">
+                <!-- UV Water Purifier Text -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start">
+                    <h3 class="grid-heading">UV Water Purifier</h3>
+                    <p class="grid-text">Uses ultraviolet technology to eliminate bacteria and viruses, providing safe, germ-free drinking water.</p>
+                </div>
+    
+                <!-- Image -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <img src="https://via.placeholder.com/300x200" alt="UV Water Purifier" class="water-image">
+                </div>
+    
+                <!-- RO Water Purifier Text -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start">
+                    <h3 class="grid-heading">RO Water Purifier</h3>
+                    <p class="grid-text">Employs reverse osmosis to remove contaminants, heavy metals, and impurities, delivering pure, great-tasting water.</p>
+                </div>
+    
+                <!-- Download Button -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <button class="download-btn">Download Catalog</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="filtration-section mt-5">
+        <div class="container">
+            <!-- Subheading -->
+            <div class="">
+                <span class="subheading">Whole house filtration</span>
+            </div>
+    
+            <!-- Row for Items -->
+            <div class="row text-center text-lg-start align-items-stretch">
+                <!-- Item 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="https://via.placeholder.com/200x200" alt="Dual Media Filter" class="item-image">
+                    <h3 class="item-title">Dual Media Filter</h3>
+                    <p class="item-text">Combines sand and anthracite layers to effectively filter out sediment and suspended particles from the entire water supply.</p>
+                </div>
+    
+                <!-- Item 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="https://via.placeholder.com/200x200" alt="Iron Removal System" class="item-image">
+                    <h3 class="item-title">Iron Removal System</h3>
+                    <p class="item-text">Targets iron and manganese in water, preventing staining and maintaining water clarity for household use.</p>
+                </div>
+    
+                <!-- Item 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="https://via.placeholder.com/200x200" alt="Water Softener" class="item-image">
+                    <h3 class="item-title">Water Softener</h3>
+                    <p class="item-text">Reduces hardness in water by removing calcium and magnesium, helping to prevent scale buildup in pipes and appliances.</p>
+                </div>
+    
+                <!-- Item 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="https://via.placeholder.com/200x200" alt="Activated Carbon Filter" class="item-image">
+                    <h3 class="item-title">Activated Carbon Filter</h3>
+                    <p class="item-text">Absorbs chlorine, odors, and organic compounds, enhancing taste and reducing chemical pollutants in water.</p>
+                </div>
+            </div>
+    
+            <!-- Bottom Section -->
+            <div class="row mt-4 align-items-center">
+                <div class="col-lg-9 col-md-12">
+                    <p class="bottom-text text-center text-lg-start">Trusted. Efficient. Premium. Qdrop delivers water treatment solutions that are meticulously crafted and fully supported every step of the way.</p>
+                </div>
+                <div class="col-lg-3 col-md-12 text-center text-lg-end">
+                    <button class="download-btn">Download Catalog</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section mt-5">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center">
+                <h2 class="testimonial-heading">What Our Clients Say</h2>
+            </div>
+    
+            <!-- Testimonials Row -->
+            <div class="row text-center mt-5">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/100" alt="Client Image" class="testimonial-image">
+                        <h5 class="testimonial-title">Outstanding Service from Qdrop’s Nedumkandam Branch - Saina Naushad</h5>
+                        <p class="testimonial-text">Qdrop’s Nedumkandam branch resolved our iron contamination issues with quick, effective solutions. The water is now clean and safe for everyday use!</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/100" alt="Client Image" class="testimonial-image">
+                        <h5 class="testimonial-title">A Lifesaver for TKBR Hotel, Kochi - Mr. Ashik</h5>
+                        <p class="testimonial-text">Qdrop’s tailored solution cleared our water hardness and microbial problems. Our guests now enjoy pure, safe water, improving both our service and reputation!</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/100" alt="Client Image" class="testimonial-image">
+                        <h5 class="testimonial-title">Exceptional Service by Asif Ibrahim</h5>
+                        <p class="testimonial-text">Asif Ibrahim from Qdrop was professional, clear in his explanations, and ensured a seamless installation. Highly recommend him!</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/100" alt="Client Image" class="testimonial-image">
+                        <h5 class="testimonial-title">Affordable and Effective Solutions - Mind the Food</h5>
+                        <p class="testimonial-text">Qdrop provided an affordable, high-quality water treatment system. Transparent pricing and efficient service made the process hassle-free.</p>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gallery-section">
+        <div class="container">
+            <!-- Gallery Heading -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h2 class="gallery-heading">Our <span class="gallery-subheading">Work</span></h2>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="gallery-arrow">&#8595;</span> <!-- Downward arrow -->
+
+                </div>
+            </div>
+    
+            <!-- Gallery Grid -->
+            <div class="row gallery-grid g-3">
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x450" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x400" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Gallery Image" class="img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
+                    <img src="https://via.placeholder.com/300x400" alt="Gallery Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Left Text Section -->
+            <div class="col-md-6 form-text-section">
+              <h2>Get Your Quote –<br> Fast, Easy, and Customized!</h2>
+              <p>
+                Let us provide you with a tailored solution that ensures clean and safe water for you. 
+                Fill out the form below to receive your customized quote!
+              </p>
+            </div>
+    
+            <!-- Right Form Section -->
+            <div class="col-md-6">
+              <div class="form-container">
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">1. Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">2. Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">3. Phone number</label>
+                    <input type="text" id="phone" class="form-control" placeholder="Enter your phone number">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">4. Write a message</label>
+                    <textarea id="message" rows="4" class="form-control" placeholder="Enter your message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="py-5">
+        <div class="container">
+          <!-- Section Heading -->
+          <h2 class="showcase-heading">Products Showcase</h2>
+          
+          <!-- Product Images Grid -->
+          <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-6 col-md-3">
+              <img src="https://via.placeholder.com/200x200" alt="Product 1" class="product-image">
+            </div>
+            <!-- Product 2 -->
+            <div class="col-6 col-md-3">
+              <img src="https://via.placeholder.com/200x200" alt="Product 2" class="product-image">
+            </div>
+            <!-- Product 3 -->
+            <div class="col-6 col-md-3">
+              <img src="https://via.placeholder.com/200x200" alt="Product 3" class="product-image">
+            </div>
+            <!-- Product 4 -->
+            <div class="col-6 col-md-3">
+              <img src="https://via.placeholder.com/200x200" alt="Product 4" class="product-image">
+            </div>
+            <div class="col-6 col-md-3">
+                <img src="https://via.placeholder.com/200x200" alt="Product 1" class="product-image">
+              </div>
+              <!-- Product 2 -->
+              <div class="col-6 col-md-3">
+                <img src="https://via.placeholder.com/200x200" alt="Product 2" class="product-image">
+              </div>
+              <!-- Product 3 -->
+              <div class="col-6 col-md-3">
+                <img src="https://via.placeholder.com/200x200" alt="Product 3" class="product-image">
+              </div>
+              <!-- Product 4 -->
+              <div class="col-6 col-md-3">
+                <img src="https://via.placeholder.com/200x200" alt="Product 4" class="product-image">
+              </div>
+            <!-- Add more products as needed -->
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container">
+          <!-- Heading -->
+          <h2 class="process-heading">Our Water Treatment Process</h2>
+    
+          <!-- Process Steps -->
+          <div class="row text-center">
+            <!-- Step 1 -->
+            <div class="col-md-3 process-container">
+              <div class="process-step">
+                <div class="process-icon bg-step-1">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h5 class="fw-bold">1. Enquiry & Consultation</h5>
+                <ul class="process-list">
+                  <li>Reach out to us through your preferred platform.</li>
+                  <li>Share your concerns and water treatment requirements.</li>
+                  <li>Get insights into products, pricing, and more.</li>
+                </ul>
+              </div>
+            </div>
+    
+            <!-- Step 2 -->
+            <div class="col-md-3 process-container">
+              <div class="process-step">
+                <div class="process-icon bg-step-2">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h5 class="fw-bold">2. Site Visit & Sample Collection</h5>
+                <ul class="process-list">
+                  <li>Our experts visit your site to gather water samples.</li>
+                  <li>We ensure accurate lab testing for reliable results.</li>
+                  <li>Site visits help us identify optimal installation methods.</li>
+                </ul>
+              </div>
+            </div>
+    
+            <!-- Step 3 -->
+            <div class="col-md-3 process-container">
+              <div class="process-step">
+                <div class="process-icon bg-step-3">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <h5 class="fw-bold">3. Water Testing & Analysis</h5>
+                <ul class="process-list">
+                  <li>Comprehensive testing, including basic water tests.</li>
+                  <li>Detailed analysis for E. Coli and Total Coliform checks.</li>
+                  <li>Lab-controlled procedures ensure accuracy.</li>
+                </ul>
+              </div>
+            </div>
+    
+            <!-- Step 4 -->
+            <div class="col-md-3 process-container">
+              <div class="process-step">
+                <div class="process-icon bg-step-4">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h5 class="fw-bold">4. Test Report, Quote & Installation</h5>
+                <ul class="process-list">
+                  <li>Receive a detailed quote based on test results.</li>
+                  <li>Address all your queries before approval.</li>
+                  <li>Schedule and complete the installation within 4 hours.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact-container">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Left Section -->
+            <div class="col-md-6 text-center text-md-start pt-5">
+              <h2 class="contact-text">Visit us<br> or drop us a line!</h2>
+              <div class="arrow-line">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+      
+            <!-- Divider -->
+            <div class="col-md-1 d-none d-md-flex justify-content-center">
+              <div class="divider"></div>
+            </div>
+      
+            <!-- Right Section -->
+            <div class="col-md-5 contact-details text-center text-md-start pt-5">
+              <h5>Kothamangalam</h5>
+              <p>City tower, Nellikuzi P O Kothamangalam.</p>
+              <p>Phone: 987-654-3210</p>
+              <p>Email: info@qdrops.com</p>
+      
+              <h5>Nedumkandam</h5>
+              <p>Opposite Panchayath Office Road,<br> Thekkady, Munnar, Nedumkandam,<br> Kerala 685553</p>
+              <p>Phone: +91 7558860973</p>
+              <p>Email: info@qdrops.com</p>
+      
+              <!-- Social Media Links -->
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
